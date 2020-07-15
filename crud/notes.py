@@ -1,4 +1,5 @@
-from db import notes, database
+from db import database
+from models.notes import notes
 from schemas.notes import NoteSchema
 
 
