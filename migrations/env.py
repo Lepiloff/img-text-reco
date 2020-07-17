@@ -11,6 +11,7 @@ from alembic import context
 sys.path = ['', '..'] + sys.path[1:]
 # Custom import
 from models.notes import notes
+from models.users import users
 from db import DATABASE_URL, metadata
 
 

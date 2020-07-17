@@ -1,5 +1,6 @@
 from databases import Database
 from sqlalchemy import MetaData, create_engine
+from sqlalchemy.ext.declarative import DeclarativeMeta, declarative_base
 
 
 DATABASE_URL = "postgresql://recognition:recognition@localhost:5432/reco"
@@ -11,3 +12,6 @@ metadata = MetaData()
 
 # databases query builder
 database = Database(DATABASE_URL)
+
+# Declare a base from your metadata
+Base: DeclarativeMeta = declarative_base(metadata=metadata)
