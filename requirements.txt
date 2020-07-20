@@ -12,6 +12,7 @@ databases==0.3.2
 dnspython==1.16.0
 email-validator==1.1.1
 fastapi==0.59.0
+fastapi-users==3.0.1
 google-api-core==1.21.0
 google-api-python-client==1.9.3
 google-auth==1.18.0
