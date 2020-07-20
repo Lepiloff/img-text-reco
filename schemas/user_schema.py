@@ -10,8 +10,8 @@ class UserCreate(models.BaseUserCreate):
 
 
 class UserUpdate(User, models.BaseUserUpdate):
-    name: str
+    pass
 
 
 class UserDB(User, models.BaseUserDB):
-    name: str
+    pass
