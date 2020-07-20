@@ -2,16 +2,16 @@ from fastapi_users import models
 
 
 class User(models.BaseUser):
-    pass
+    name: str
 
 
 class UserCreate(models.BaseUserCreate):
-    pass
+    name: str
 
 
 class UserUpdate(User, models.BaseUserUpdate):
-    pass
+    name: str
 
 
 class UserDB(User, models.BaseUserDB):
-    pass
+    name: str
