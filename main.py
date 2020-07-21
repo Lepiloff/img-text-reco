@@ -1,6 +1,8 @@
 from services.auth_jwt import jwt_authentication, fastapi_users, SECRET
 
 from fastapi import FastAPI, Request
+from fastapi.staticfiles import StaticFiles
+
 from routers import notes, text_ocr
 from db import database
 from schemas.user_schema import UserDB
@@ -9,6 +11,9 @@ from schemas.user_schema import UserDB
 # metadata.create_all(engine)
 
 app = FastAPI()
+
+# Add static files
+app.mount('/static', StaticFiles(directory='static'), name='static')
 
 
 @app.on_event("startup")
