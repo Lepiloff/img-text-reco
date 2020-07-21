@@ -24,7 +24,7 @@ async def file_upload(request: Request, file: UploadFile = File(...)):
 async def file_receive():
     content = """
 <body>
-<form action = "http://localhost:8000/image/uploadfile/" enctype="multipart/form-data" method="post">
+<form action = "http://./image/uploadfile/" enctype="multipart/form-data" method="post">
 <input name="file" type="file" multiple>
 <input type="submit">
 </form>
