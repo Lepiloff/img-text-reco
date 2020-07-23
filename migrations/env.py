@@ -12,6 +12,8 @@ sys.path = ['', '..'] + sys.path[1:]
 # Custom import
 from models.notes import notes
 from models.users import users
+from models.product import image, product
+
 from db import DATABASE_URL, metadata
 
 

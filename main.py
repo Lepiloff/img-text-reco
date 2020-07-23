@@ -3,7 +3,7 @@ from services.auth_jwt import jwt_authentication, fastapi_users, SECRET
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 
-from routers import notes, text_ocr
+from routers import notes, text_ocr, product
 from db import database
 from schemas.user_schema import UserDB
 
@@ -37,7 +37,8 @@ def on_after_forgot_password(user: UserDB, token: str, request: Request):
 
 # Custom routs
 app.include_router(notes.router, prefix='/notes', tags=['notes'])
-app.include_router(text_ocr.router, prefix='/image')
+app.include_router(text_ocr.router, prefix='/image', tags=['ocr'])
+app.include_router(product.router, prefix='/product', tags=['product'])
 
 # Fastapi user auth routs
 app.include_router(
