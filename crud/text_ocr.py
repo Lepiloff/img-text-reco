@@ -8,7 +8,7 @@ import io
 
 from fastapi import HTTPException
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/y700/google_credentials/b52a5b1f9922.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/tmp/google_credentials/b52a5b1f9922.json"
 
 
 def detect_text(path):
@@ -42,7 +42,7 @@ async def create_upload_file(file):
     if file.content_type not in ['image/jpeg', 'image/png']:
         raise HTTPException(status_code=406, detail="Only .jpeg or .png  files allowed")
     file_name = f'{uuid.uuid4().hex}{ext}'
-    async with aiofiles.open(os.path.join('/static/product_images', file_name), "wb") as f:
+    async with aiofiles.open(file_name, "wb") as f:
         await f.write(content)
     path_to_img = os.path.abspath(file_name)
     try:

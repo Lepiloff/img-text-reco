@@ -14,7 +14,10 @@ async def file_upload(request: Request, file: UploadFile = File(...)):
     response = await create_upload_file(file)
     # return response
     response = response.get('file_info')
-    return templates.TemplateResponse("ocr_result.html", {"request": request, "result": response[0].get('description')})
+    if not response:
+        return templates.TemplateResponse("ocr_result.html", {"request": request, "result": 'No text found'})
+    else:
+        return templates.TemplateResponse("ocr_result.html", {"request": request, "result": response[0].get('description')})
 
 # @router.get("/file/")
 # async def file_get():
