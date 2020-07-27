@@ -3,15 +3,15 @@ import uuid
 
 import aiofiles
 
-from schemas.products_schema import Product
+from schemas.products_schema import ProductSchema
 from models.product import product
 from fastapi import APIRouter, UploadFile, File, HTTPException
 
 router = APIRouter()
 
 
-@router.post('/add_product/', response_model=Product, status_code=201)
-async def create_product(payload: Product, file: UploadFile = File(...)):
+@router.post('/add_product/', response_model=ProductSchema, status_code=201)
+async def create_product(payload: ProductSchema, file: UploadFile = File(...)):
     _, ext = os.path.splitext(file.filename)
     print(ext)
     content = await file.read()
