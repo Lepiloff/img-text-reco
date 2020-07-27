@@ -8,7 +8,7 @@ import io
 
 from fastapi import HTTPException
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/tmp/google_credentials/b52a5b1f9922.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "../google_credentials/b52a5b1f9922.json"
 
 
 def detect_text(path):
