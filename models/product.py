@@ -10,20 +10,9 @@ class Product(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String, nullable=False)
     description = Column(String(50))
-
-    images = relationship('Image', back_populates='products')
-
-
-product = Product.__tablename__
+    # images = relationship('Image', back_populates='products')
+    images = Column(String)
 
 
-class Image(Base):
-    __tablename__ = 'images'
+product = Product.__table__
 
-    id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False)
-    product_id = Column(Integer, ForeignKey('products.id'))
-    product = relationship('Product', back_populates='images')
-
-
-image = Image.__table__

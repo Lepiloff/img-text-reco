@@ -9,7 +9,6 @@ from schemas.user_schema import UserDB
 
 #Create the tables, not for production
 # metadata.create_all(engine)
-
 app = FastAPI()
 
 # Add static files

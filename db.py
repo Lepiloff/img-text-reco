@@ -5,7 +5,7 @@ from sqlalchemy.ext.declarative import DeclarativeMeta, declarative_base
 
 DEFAULT_DATABASE_URL = "postgresql://recognition:recognition@localhost:5432/reco"
 DATABASE_URL = (os.getenv('DATABASE_URL', DEFAULT_DATABASE_URL))
-
+BASEDIR = os.path.dirname(os.path.abspath(__file__))
 
 # SQLAlchemy
 engine = create_engine(DATABASE_URL)
