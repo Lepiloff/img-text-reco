@@ -22,7 +22,7 @@ googleapis-common-protos==1.52.0
 grpcio==1.30.0
 gunicorn==20.0.4
 h11==0.9.0
-httpie==2.2.0
+httpie==3.1.0
 httplib2==0.18.1
 httptools==0.1.1
 idna==2.10
